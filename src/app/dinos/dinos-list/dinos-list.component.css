@@ -1,0 +1,26 @@
+.mensaje-alerta {
+    color: darkred;
+    background-color: rgba(255, 235, 235, 0.536); /* Fondo semi-transparente */
+    position: fixed; /* Se mantiene fijo en la parte superior */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    text-align: center; /* Centrar texto */
+    font-weight: bold;
+    padding: 10px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;  /* Permite que las tarjetas pasen a la siguiente línea */
+    gap: 16px;  /* Espaciado entre tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto; /* Se ajusta al contenido */
+}

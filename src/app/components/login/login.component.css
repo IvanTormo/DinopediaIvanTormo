@@ -1,0 +1,14 @@
+.login-wrapper {
+    display: flex;                /* Activamos Flexbox */
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: center;          /* Centra verticalmente */
+    height: 100vh;                /* Ocupa todo el alto de la ventana */
+  }
+  
+  .container {
+    width: 400px;                 /* Ancho del contenedor (login) */
+    padding: 20px;                /* Un poco de espacio dentro del contenedor */
+    background: #fff;             /* Fondo blanco */
+    border-radius: 10px;          /* Bordes redondeados (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  }

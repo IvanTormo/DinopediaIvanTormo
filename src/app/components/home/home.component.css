@@ -1,0 +1,22 @@
+body {
+    background-image: url("/fondo_web.webp");
+    height: 500px;
+}
+
+/* home.component.css */
+.home-background {
+    background-image: url('/fondo_web.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Hacer que ocupe toda la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Para hacer que el texto sea visible sobre el fondo */
+    text-shadow: 2px 2px 4px black;
+}
+
+.boton {
+    text-shadow: none;
+}
+  

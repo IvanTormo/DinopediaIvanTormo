@@ -1,0 +1,8 @@
+.card img {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    aspect-ratio: 1 / 1; /* Hace que el contenedor de la imagen sea cuadrado */
+    object-fit: contain; /* La imagen se ajusta dentro sin recortarse ni deformarse */
+    background-color: #f0f0f0; /* Opcional: fondo gris para el espacio vacío */
+    border-radius: 10px;
+    display: block;
+}

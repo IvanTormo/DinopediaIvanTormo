@@ -1,0 +1,12 @@
+<div class="container">
+    @if (!logged) {
+        <p class="mensaje-alerta">Debes estar registrado para ver la información detallada</p>
+    }
+    <div class="grid-container">
+        @for (dino of dinos; track dino.name;) {
+            <div class="grid-item">
+                <app-dino-card [dino]="dino"></app-dino-card>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="container d-flex justify-content-center mt-4">
+    <div class="card shadow-lg p-4 w-100" style="max-width: 500px;">
+        <h2 class="text-center mb-4">Registro de Dinosaurios</h2>
+        <form [formGroup]="dinosaurForm" (ngSubmit)="submitForm()">
+            
+            <div class="mb-3">
+                <label class="form-label">Nombre:</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Ej: T-Rex" />
+                @if (dinosaurForm.get('name')?.invalid && dinosaurForm.get('name')?.touched) {
+                    <div class="text-danger small">
+                        @if (dinosaurForm.get('name')?.hasError('required')) {
+                            <small>El nombre es obligatorio.</small>
+                        }
+                        @if (dinosaurForm.get('name')?.hasError('minlength')) {
+                            <small>Mínimo 3 caracteres.</small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo de dieta:</label>
+                <select class="form-select" formControlName="diet">
+                    <option value="Herbivore">Herbívoro</option>
+                    <option value="Carnivore">Carnívoro</option>
+                    <option value="Omnivore">Omnívoro</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Longitud (metros):</label>
+                <input type="number" class="form-control" formControlName="length" placeholder="Ej: 12" min="0" step="0.1" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Período:</label>
+                <select class="form-select" formControlName="period">
+                    <option value="Triassic">Triásico</option>
+                    <option value="Jurassic">Jurásico</option>
+                    <option value="Cretaceous">Cretácico</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Enlace de referencia:</label>
+                <input type="url" class="form-control" formControlName="link" placeholder="Ej: https://es.wikipedia.org/wiki/Tyrannosaurus" />
+                @if (dinosaurForm.get('link')?.invalid && dinosaurForm.get('link')?.touched) {
+                    <div class="text-danger small">
+                        <small>Debe ser un enlace válido.</small>
+                    </div>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Vivió en:</label>
+                <input type="text" class="form-control" formControlName="lived_in" placeholder="Ej: Norteamérica" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Descubierto por:</label>
+                <input type="text" class="form-control" formControlName="named_by" placeholder="Ej: Henry Fairfield Osborn" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Especie:</label>
+                <input type="text" class="form-control" formControlName="species" placeholder="Ej: T. rex" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Taxonomía:</label>
+                <input type="text" class="form-control" formControlName="taxonomy" placeholder="Ej: Theropoda" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo:</label>
+                <input type="text" class="form-control" formControlName="type" placeholder="Ej: Terrestre" />
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary w-100" [disabled]="dinosaurForm.invalid">
+                    Guardar Dinosaurio
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

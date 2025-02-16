@@ -1,0 +1,14 @@
+<!--<img src="fondo_web.webp">-->
+<div class="home-background">
+    <div class="text-center">
+      <h1>Bienvenido a la Página de Inicio</h1>
+      <p>Aquí puedes encontrar la información más reciente</p>
+      @if (logged) {
+        <a class="btn btn-primary" [routerLink]="['/main']" routerLinkActive="router-link-active" >Ir a la lista</a>
+      } @else {
+        <p>Es necesario estar registrado para ver más información</p>
+        <a class="btn btn-primary boton" [routerLink]="['/login']" routerLinkActive="router-link-active" >Registrarse</a>
+      }
+      
+    </div>
+</div>

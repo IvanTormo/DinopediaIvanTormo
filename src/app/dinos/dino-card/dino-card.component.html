@@ -1,0 +1,11 @@
+<div class="card" style="width: 15rem; margin-top: 30px;">
+    <img [src]="url" class="card-img-top imagen" (error)="onImageError($event)" alt={{dino.name}}>
+    <div class="card-body">
+      <h5 class="card-title">{{dino ? dino.name : "Sin titulo"}}</h5>
+      <!-- <p class="card-text">{{dino.name}}</p> -->
+      <!--<a [routerLink]="['/dino',dino.name]" routerLinkActive="router-link-active"  class="btn btn-primary">Visualizar</a>-->
+      @if (logged) {
+        <a [href]="dino.link" target="_blank" class="btn btn-primary">Visualizar</a>
+      }
+    </div>
+</div>
