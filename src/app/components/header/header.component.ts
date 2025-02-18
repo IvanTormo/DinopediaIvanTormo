@@ -38,6 +38,7 @@ export class HeaderComponent implements OnInit{
 
     this.searchForm.get('searchInput')?.valueChanges.subscribe(searchValue => {
       this.busqueda = searchValue;
+      this.confirmarBusqueda();
       //this.searchService.searchDinosaurs("name",searchValue);
     });
   }
