@@ -129,4 +129,18 @@ export class SupabaseService {
     await this.supabase.auth.signOut();
     SupabaseService.loggerSubject.next(false);
   }
+
+  async uploadImage(file: Blob, fileName: string): Promise<string | null> {
+    const { data, error } = await this.supabase.storage.from('dinosaur-images').upload(fileName, file, {
+      cacheControl: '3600',
+      upsert: true // Sobreescribe si ya existe
+    });
+
+    if (error) {
+      console.error('Error subiendo imagen:', error);
+      return null;
+    }
+
+    return `${environment.supabaseUrl}/storage/v1/object/public/dinosaur-images/${fileName}`;
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Dinosaur } from '../I-Dino';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-dino-details',
@@ -9,15 +10,15 @@ import { Dinosaur } from '../I-Dino';
   styleUrl: './dino-details.component.css'
 })
 export class DinoDetailsComponent {
-  @Input('id') dinoID?: string;
-  
+    @Input('id') dinoID?: string;
     dino!: Dinosaur;
-     constructor(private activateRoute: ActivatedRoute){
-    
+    constructor(private searchService: SearchService){
+
    }
    ngOnInit(): void{
-    //this.recipe = recipes.filter((recipe)=>recipe.idMeal===this.recipeID)[0];
-    
-    //this.activateRoute.params.subscribe(params => this.recipeID = params['id'])
+    this.searchService.searchDinosaurs("name", this.dinoID!)
+          .subscribe(dinosaurs => {
+            this.dino = dinosaurs[0]; // Actualizamos la lista en el componente
+          });
    }
 }
