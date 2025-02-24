@@ -17,10 +17,10 @@ export class SearchService {
   }
 
   // Método para obtener dinosaurios filtrados
-  searchDinosaurs(atributo: string, valorBusqueda: string, page: number, pageSize: number): Observable<any[]> {
-    const offset = (page - 1) * pageSize;
+  searchDinosaurs(atributo: string, valorBusqueda: string/*, page: number, pageSize: number*/): Observable<any[]> {
+    //const offset = (page - 1) * pageSize;
   
-    return this.supabaseService.getDinosaursByAttribute(atributo, valorBusqueda, pageSize, offset).pipe(
+    return this.supabaseService.getDinosaursByAttribute(atributo, valorBusqueda/*, pageSize, offset*/).pipe(
       map(response => response.data || []),
       /* Si deseas, puedes usar 'tap' para debuguear los dinosaurios filtrados */
       /* tap(dinos => console.log('Dinosaurios filtrados:', dinos)) */

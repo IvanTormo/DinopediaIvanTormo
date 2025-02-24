@@ -49,17 +49,17 @@ export class SupabaseService {
     return data;
   }
 
-  getDinosaursByAttribute(attribute: string, value: string, page: number, pageSize: number): Observable<any> {
-    const start = (page - 1) * pageSize; // El primer registro de la página
-    const end = start + pageSize - 1; // El último registro de la página
+  getDinosaursByAttribute(attribute: string, value: string/*, page: number, pageSize: number*/): Observable<any> {
+    /*const start = (page - 1) * pageSize; // El primer registro de la página
+    const end = start + pageSize - 1; // El último registro de la página*/
   
     return from(
       this.supabase
         .from('dinosaurs')
         .select()
         .ilike(attribute, `%${value}%`)  // Filtro de búsqueda por el atributo
-        .limit(pageSize)  // Limitar los resultados por página
-        .range(start, end)  // Rango de resultados, esto reemplaza al offset
+        .limit(20)  // Limitar los resultados por página
+        /*.range(start, end)  // Rango de resultados, esto reemplaza al offset*/
     );
   }
   

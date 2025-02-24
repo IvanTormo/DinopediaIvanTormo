@@ -16,7 +16,7 @@ export class DinoDetailsComponent {
 
    }
    ngOnInit(): void{
-    this.searchService.searchDinosaurs("name", this.dinoNombre,1,5)
+    this.searchService.searchDinosaurs("name", this.dinoNombre/*,1,5*/)
           .subscribe(dinosaurs => {
             this.dino = dinosaurs[0]; // Actualizamos la lista en el componente
           });
