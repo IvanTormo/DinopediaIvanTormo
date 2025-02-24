@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'main', component: MainComponent },
     { path: 'crear', component: CreateDinoFormComponent, canActivate: [supabaseLoginGuard] },
-    { path: 'dino/:id', component: DinoDetailsComponent, canActivate: [supabaseLoginGuard] },
+    { path: 'dino/:nombre', component: DinoDetailsComponent, canActivate: [supabaseLoginGuard] },
 
     // Rutas de Login y Register deben ser accesibles directamente desde la raíz
     { path: 'login', component: LoginComponent },

@@ -28,9 +28,17 @@ export class CreateDinoFormComponent {
     });
   }
 
-  submitForm() {
+  enviarDatos() {
     if (this.dinosaurForm.valid) {
       console.log('Dinosaur Data:', this.dinosaurForm.value);
+      this.supaService.guardarDino(this.dinosaurForm.value).subscribe({
+        next: (data) => {
+          console.log("Guardado correctamente");
+          console.log(data);
+          this.dinosaurForm.reset();
+        },
+        error: (err) => this.error = err.message
+      })
     } else {
       console.log('Form is invalid');
     }

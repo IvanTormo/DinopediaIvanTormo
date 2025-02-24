@@ -9,4 +9,5 @@ export interface Dinosaur {
     species: string | null;
     taxonomy: string | null;
     type: string | null;
+    image_url: string | null;
 }

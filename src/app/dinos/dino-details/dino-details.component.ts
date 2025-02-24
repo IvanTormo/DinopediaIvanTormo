@@ -10,13 +10,13 @@ import { SearchService } from '../../services/search.service';
   styleUrl: './dino-details.component.css'
 })
 export class DinoDetailsComponent {
-    @Input('id') dinoID?: string;
+    @Input('nombre') dinoNombre!: string;
     dino!: Dinosaur;
     constructor(private searchService: SearchService){
 
    }
    ngOnInit(): void{
-    this.searchService.searchDinosaurs("name", this.dinoID!)
+    this.searchService.searchDinosaurs("name", this.dinoNombre,1,5)
           .subscribe(dinosaurs => {
             this.dino = dinosaurs[0]; // Actualizamos la lista en el componente
           });

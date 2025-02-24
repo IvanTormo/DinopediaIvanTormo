@@ -22,14 +22,14 @@ export class LoginComponent {
   error: string | undefined;
 
   sendLogin(){
-    console.log(this.email,this.password);
     
     this.supaService.login(this.email,this.password).subscribe(loginData => {
-      /*if (loginData.error) {
+      if (loginData.error) {
         this.error = loginData.error.message;
-      }*/
-      console.log(loginData);
-      this.router.navigate(['/home']);
+      } else {
+        this.error=undefined;
+        this.router.navigate(['/home']);
+      }
     });
   }
 }

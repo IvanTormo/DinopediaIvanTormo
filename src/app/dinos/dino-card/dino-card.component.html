@@ -5,7 +5,8 @@
       <!-- <p class="card-text">{{dino.name}}</p> -->
       <!--<a [routerLink]="['/dino',dino.name]" routerLinkActive="router-link-active"  class="btn btn-primary">Visualizar</a>-->
       @if (logged) {
-        <a [href]="dino.link" target="_blank" class="btn btn-primary">Visualizar</a>
+        <a class="btn btn-primary" [routerLink]="['/dino', dino.name]">Ver detalles</a>
+        <!--<a [href]="dino.link" target="_blank" class="btn btn-primary">Visualizar</a>-->
       }
     </div>
 </div>

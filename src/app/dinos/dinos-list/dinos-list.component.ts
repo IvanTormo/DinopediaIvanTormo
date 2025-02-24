@@ -33,7 +33,7 @@ export class DinosListComponent {
       .pipe(
         debounceTime(500), // Retrasamos la búsqueda para evitar demasiadas peticiones
         distinctUntilChanged(), // Evitamos peticiones innecesarias si el usuario escribe lo mismo
-        switchMap(searchValue => this.searchService.searchDinosaurs("name", searchValue))
+        switchMap(searchValue => this.searchService.searchDinosaurs("name", searchValue,1,5))
       )
       .subscribe(dinosaurs => {
         console.log("Dinosaurios filtrados:", dinosaurs);

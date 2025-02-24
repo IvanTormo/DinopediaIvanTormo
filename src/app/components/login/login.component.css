@@ -12,3 +12,9 @@
     border-radius: 10px;          /* Bordes redondeados (opcional) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
   }
+  .error-message {
+    margin-top: 10px;  /* Ajusta el margen superior */
+    padding: 15px;     /* Aumenta el padding para que el cuadro se vea más grande */
+    border-radius: 5px; /* Bordes redondeados para hacerlo más estilizado */
+    height: 60px;
+  }

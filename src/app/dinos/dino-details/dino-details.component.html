@@ -1,2 +1,52 @@
-<p>dino-details works!</p>
-<p>Dino: {{dino.name}}</p>
+<!-- dinosaur.component.html -->
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3>{{ dino?.name || 'Dinosaur Details' }}</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Nombre:</strong> {{ dino?.name || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Especie:</strong> {{ dino?.species || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Período:</strong> {{ dino?.period || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Taxonomía:</strong> {{ dino?.taxonomy || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Alimentación:</strong> {{ dino?.diet || 'N/A' }}
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Longitud:</strong> {{ dino?.length || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Vivió en:</strong> {{ dino?.lived_in || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Nombrado por:</strong> {{ dino?.named_by || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Tipo:</strong> {{ dino?.type || 'N/A' }}
+              </li>
+              <li class="list-group-item">
+                <strong>Más información:</strong> 
+                <a href="{{ dino?.link || '#' }}" target="_blank" class="btn btn-link">Ver detalles</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
